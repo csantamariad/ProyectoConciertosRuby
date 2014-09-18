@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <label>Local:</label> <%= @local.name %>
+</div>
+<div>
+  <img class="picture_local" src="<%= @local.pictureref ? "/data/#{@local.pictureref}":'#'  %>" onerror="this.src='/data/default_local';" />
+</div>
+<div>
+  <label>Decripción:</label><span><%= @local.description %></span><br/>
+  <label>Teléfono:</label><span><%= @local.phone %></span><br/>
+  <label>Dirección:</label><span><%= @local.address %> - <%= @local.district %></span><br/>
+  <label>Google Map:</label><span><%= @local.geolocation %></span><br/>
+</div>
+<div>
+<%= link_to 'Editar', edit_local_path(@local) , class: 'link_button'%> 
+<%= link_to 'Regresar', locals_path, class: 'link_button' %>
+</div>

@@ -1,0 +1,76 @@
+<section id="content">
+  <div class="wrap-content zerogrid">
+    <div class="row block02">
+      <div class="col-full">
+        <div class="wrap-col">
+          <div class="col-2-4">
+            <div class="wrap-col">
+              <div class="box">
+                <div class="heading"><h2>Registrase</h2></div>
+                <div class="content">
+                  <div class="box">
+
+                    <!--#### Register New User ####-->
+                    <%= simple_form_for @user do |f| %>
+                    <%= f.input :givenname, label: 'Nombres', html:{class:'form_field'} %>
+                    <%= f.input :lastname1, label: 'Apellido Paterno' %>
+                    <%= f.input :lastname2, label: 'Apellido Materno' %>
+                    <%= f.input :documenttype, label: 'Tipo Documento', collection: ['DNI','TUI'], include_blank: false %>
+                    <%= f.input :documentnumber, label: 'Numero Documento' %>
+                    <%= f.input :gender, label: 'Sexo', collection: ['Masculino','Femenino'], include_blank: false %>
+                    <%= f.input :email, label: 'Correo',placeholder: 'user@domain.com' %>
+                    <%= f.input :password, label: 'Clave' %>
+                    <%= f.input :password_confirmation, label: 'Confirmacion'%>
+                    <%= f.button :submit, value: 'Registrarse' %>
+                    <% end %>
+                    <!--####  ####-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2-4">
+            <div class="wrap-col">
+              <div class="box">
+                <div class="heading"><h2>Ingresar</h2></div>
+                <div class="content">
+                  <div class="box">
+                    <%= notice %>
+                    <!-- ### Log in ### -->
+                    <%= simple_form_for @user, :url => '/public/login', :method => :post do |f| %>
+                    <%= f.input :email, label: 'Correo',placeholder: 'user@domain.com' %>
+                    <%= f.input :password, label: 'Clave' %>
+                    <%= f.button :submit, value: 'Entrar' %>
+                    <% end %>
+                    <!-- ###  ### -->
+                  </div>
+                </div>
+
+                <div class="content">
+                  <div class="box">
+                    <%= notice %>
+                    <!-- ### Log with Twitter ### -->
+                    <div id="social">
+                      <div class="inset">
+                        <%= link_to "/auth/twitter" , class:"tw logo_button" do  %>
+                            <div class="logo_wrap">
+                              <span class="logo"></span>
+                            </div>
+                            <span>Entrar con Twitter</span>
+                        <% end %>
+                      </div>
+                    </div>
+                    <!-- ###  ### -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

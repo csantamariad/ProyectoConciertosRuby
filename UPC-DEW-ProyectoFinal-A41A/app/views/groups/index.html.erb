@@ -1,0 +1,36 @@
+<h1>Listado de grupos</h1>
+
+<table class="box-table-a">
+  <tr>
+    <th>Grupo</th>
+    <th>Genero Musical</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @groups.each do |group| %>
+  <tr>
+    <td>
+      <img src="/data/<%= group.pictureref %>" onerror="this.src='/data/default_group';" width="100" />
+      <br/>
+      <label><%= group.name %></label> 
+      <br/>
+      Miembros:
+      <br/>
+      <% group.users.each do |cur_user|%>
+        <img class="picture_user small"  src="<%= cur_user.pictureref ? "/data/#{cur_user.pictureref}":'#'  %>" onerror="this.src='/data/default_user';" />
+        <span><%= cur_user.lastname1 %> <%= cur_user.lastname2 %>, <%= cur_user.givenname %></span><br/>
+      <% end %>
+    </td>
+    <td><%= group.genre %></td>
+    <td><%= link_to 'Mostrar', group, class: 'link_button' %></td>
+    <td><%= link_to 'Editar', edit_group_path(group), class: 'link_button' %></td>
+    <td><%= link_to 'Borrar', group, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo grupo', new_group_path, class: 'link_button' %>

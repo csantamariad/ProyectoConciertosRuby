@@ -1,0 +1,99 @@
+<!-- ------------Content------------- -->
+<section id="content">
+  <div class="wrap-content zerogrid">
+    <div class="row block03">
+      <div class="col-2-3">
+        <div class="wrap-col">
+          <% @locals.each do |local| %>
+              <div style="background: #959595; padding: 10px;">
+                <table class="box-table-a" style="width: 100%">
+                  <tr style="background: #000099; color: #fff">
+                    <td colspan="2" style="background: #000099; color: #fff; text-align: center"  ><%= local.name %></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><%= local.description %></td>
+                  </tr>
+                  <tr>
+                    <td>Direccion</td><td><%= local.address %></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <img id="img" fieldname="local_pictureref"  src="<%= local.pictureref ? "/data/#{local.pictureref}":'#' %>" onerror="this.src='/data/default_local';"/>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+          <% end %>
+
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ------------Footer------------- -->
+<footer>
+  <div class="wrap-footer zerogrid">
+    <div class="row block09">
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Nosotros</h2></div>
+            <div class="content">
+              <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis natoque penatibus.</p>
+              <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis natoque penatibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Últimos anuncios</h2></div>
+            <div class="content">
+              <ul>
+                <li><a href="#">Magic Island Ibiza</a></li>
+                <li><a href="#">Bamboo Is Just For You</a></li>
+                <li><a href="#">Every Hot Summer</a></li>
+                <li><a href="#">Magic Island Ibiza</a></li>
+                <li><a href="#">Bamboo Is Just For You</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Álbums preferidos</h2></div>
+            <div class="content">
+              <div class="tag">
+                <a href="#">Galaxy</a><a href="#">Beatport</a><a href="#">Amazon</a><a href="#">Itunes</a><a href="#">Sonic</a><a href="#">Kpopps</a><a href="#">Summer</a><a href="#">Magical</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Contáctenos</h2></div>
+            <div class="content">
+              <ul>
+                <li>Dirección : 0123 Some Street. Country</li>
+                <li>Teléfono : 000.000.000.000</li>
+                <li>Email : admin@zerotheme.com</li>
+                <li>Website : www.zerotheme.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row copyright">
+      <p>Copyright © 2013 - <a href="http://www.zerotheme.com" target="_blank">Free Html5 Templates</a> and <a href="http://www.zerotheme.com" target="_blank">Free Responsive Templates</a> by Zerotheme.com</p>
+    </div>
+  </div>
+</footer>

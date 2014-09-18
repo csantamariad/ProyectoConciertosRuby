@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ .admin-link{
+  float: right !important;
+}
+
+tr th, tr text-decoration: {
+  border: 1px solid #ccc;
+}
+
+.simple_form div label{
+  width: 300px;
+  height: 20px;
+  display: block;
+}
+
+.simple_form div input{
+  width: 300px;
+  font-size: 20px;
+  display: block;
+  padding:5px;
+}
+
+.simple_form div label{
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.simple_form div .required abbr{
+  display: none;
+}
+.simple_form select {
+  width: 300px;
+  font-size: 20px;
+  display: block;
+  padding:5px;
+}
+
+.button{
+  color: #ffffff;
+  min-width: 100px;
+  min-height: 30px;
+  padding: 10px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px; background: #ED145B; margin: 0px 5px 5px 0px; float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  color: #ffffff; background: #F36A97;
+}
+
+.picture_local{
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+}
+.picture_user{
+  cursor: pointer;
+}
+.small{
+  width: 20px;
+  height: 20px;
+}
+
+.link_button{
+  min-width: 100px;
+  padding: 5px 10px;
+  border: solid thin #959595;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+/* Cuztomization for checkbox*/
+.checkbox_container input {
+  display: inline !important;
+  width: auto !important;
+  height: 30px;
+  vertical-align: middle;
+}
+.checkbox_container label {
+  display: inline !important;
+  width: auto !important;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.checkbox_container label:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}

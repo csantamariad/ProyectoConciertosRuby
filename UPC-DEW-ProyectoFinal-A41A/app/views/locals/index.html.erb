@@ -1,0 +1,31 @@
+<h1>Listado de locales</h1>
+
+<table class="box-table-a">
+  <tr>
+    <th>Nombre</th>
+    <th>Distrito</th>
+    <th>Teléfono</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @locals.each do |local| %>
+  <tr>
+    <td>
+        <img src="/data/<%= local.pictureref %>" onerror="this.src='/data/default_local';" width="100" />
+        <%= local.name %>
+        <%= local.name %>
+    </td>
+    <td><%= local.district %></td>
+    <td><%= local.phone %></td>
+    <td><%= link_to 'Mostrar', local , class: 'link_button'%></td>
+    <td><%= link_to 'Editar', edit_local_path(local) , class: 'link_button' %></td>
+    <td><%= link_to 'Borrar', local, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo local', new_local_path , class: 'link_button' %>

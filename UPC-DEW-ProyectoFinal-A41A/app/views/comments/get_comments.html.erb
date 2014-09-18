@@ -1,0 +1,16 @@
+
+<% @comments.each do |comment| %>
+<!--  begin: iterando los formularios -->
+<div class="comments message" ordinal="<%= comment.ordinal %>">
+    <div><%= comment.content %></div>
+    <div>
+        <form class="sub_comment_form"   method="POST" action="/ajax/comments">
+            <input name="content" style="padding:3px;margin:5px 10px;"/>
+            <input type="hidden" name="ordinal" value="<%= comment.ordinal %>"/>
+
+            <input type="submit" value="Comentar"/>
+        </form>
+    </div>
+</div>
+<!--  end: iterando los formularios -->
+<% end %>

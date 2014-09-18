@@ -1,0 +1,32 @@
+<div class="list">
+  <ul>
+    <% if current_user %>
+        <% if current_user.user_type_id == 2 %>
+            <li><a href="/concerts">Administrar Conciertos</a></li>
+            <li><a href="/groups">Administrar Grupos</a></li>
+        <% end %>
+    <% end %>
+
+    <% if current_user %>
+        <% if current_user.user_type_id == 1 %>
+            <li><a href="/locals">Administrar Locales</a></li>
+            <li><a href="/users">Administrar Usuarios</a></li>
+        <% end %>
+    <% end %>
+
+    <% if current_user %>
+        <% if current_user.user_type_id == 3 %>
+            <li><a href="/alumno">Confirmar Alumno</a></li>
+        <% end %>
+    <% end %>
+
+    <% if current_user %>
+        <% if current_user.email == email_twitter %>
+            <li><a href="/email">Configurar Email</a></li>
+        <% end %>
+        <li><a href="/password">Cambiar Contraseña</a></li>
+    <% end %>
+
+
+  </ul>
+</div>

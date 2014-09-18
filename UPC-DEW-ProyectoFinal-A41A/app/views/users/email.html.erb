@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<%= simple_form_for @user, :url => '/email_change' , :method => 'post'  do  |f| %>
+    <%= f.input :email, label: 'Correo',placeholder: 'user@domain.com' , required:true %>
+    <%= f.button :submit, value: 'Actualizar' %>
+<% end %>

@@ -1,0 +1,63 @@
+<%= simple_form_for @local do |f| %>
+<div class="input string optional">
+  <img id="img" fieldname="local_pictureref" class="ajaxUpload picture_local" src="<%= @local.pictureref ? "/data/#{@local.pictureref}":'#' %>" onerror="this.src='/data/default_local';"/>
+  <br/>
+  (click en la imagen para cambiar)
+</div>
+  <%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
+  <%= f.input :name, label: 'Nombre' %>
+  <%= f.input :district, label: 'Distrito', collection: 
+  [
+    'Ancón',
+'Ate',
+'Barranco',
+'Breña',
+'Carabayllo',
+'Cercado de Lima',
+'Chaclacayo',
+'Chorrillos',
+'Cieneguilla',
+'Comas',
+'El Agustino',
+'Independencia',
+'Jesús María',
+'La Molina',
+'La Victoria',
+'Lince',
+'Los Olivos',
+'Lurigancho-Chosica',
+'Lurín',
+'Magdalena del Mar',
+'Pueblo Libre',
+'Miraflores',
+'Pachacámac',
+'Pucusana',
+'Puente Piedra',
+'Punta Hermosa',
+'Punta Negra',
+'Rímac',
+'San Bartolo',
+'San Borja',
+'San Isidro',
+'San Juan de Lurigancho',
+'San Juan de Miraflores',
+'San Luis',
+'San Martín de Porres',
+'San Miguel',
+'Santa Anita',
+'Santa María del Mar',
+'Santa Rosa',
+'Santiago de Surco',
+'Surquillo',
+'Villa El Salvador',
+'Villa María del Triunfo'
+  ], include_blank: false %>
+  <%= f.input :address, label: 'Direccion' %>
+  <%= f.input :phone, label: 'Telefono' %>
+  <%= f.input :description, label: 'Descripcion' %>
+
+  <%= gmaps4rails(@json) %>
+
+  <%= f.button :submit , "Registrar" %>
+<% end %>
+

@@ -1,0 +1,31 @@
+<h1>Listado de usuarios</h1>
+
+<table class="box-table-a">
+  <tr>
+    <th>Usuario</th>
+    <th>Tipo de usuario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+</tr>
+
+<% @users.each do |user| %>
+<tr>
+    <td>
+        <img src="/data/<%= user.pictureref %>" onerror="this.src='/data/default_user';" width="100" />
+        <br/>
+        <label><%= user.lastname1 %> <%= user.lastname2 %>, <%= user.givenname %></label> 
+        <br/>
+        <label>Correo</label> <span><%= user.email %></span> 
+    </td>
+    <td><%= user.user_type.name %></td>
+    <td><%= link_to 'Mostrar', user , class: 'link_button'%></td>
+    <td><%= link_to 'Editar', edit_user_path(user) , class: 'link_button'%></td>
+    <td><%= link_to 'Borrar', user, method: :delete, data: { confirm: 'Está seguro de Borrar?' } , class: 'link_button'%></td>
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo usuario', new_user_path, class: 'link_button' %>

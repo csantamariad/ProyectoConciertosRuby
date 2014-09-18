@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  headline: MyString
+  description: MyText
+  datestart: 2013-06-05 23:16:57
+  dateend: 2013-06-05 23:16:57
+  totalscore: 1
+  local: 
+  group: 
+
+two:
+  headline: MyString
+  description: MyText
+  datestart: 2013-06-05 23:16:57
+  dateend: 2013-06-05 23:16:57
+  totalscore: 1
+  local: 
+  group: 

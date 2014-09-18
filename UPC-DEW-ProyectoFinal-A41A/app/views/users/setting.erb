@@ -1,0 +1,16 @@
+<%= simple_form_for @user, :url => '/setting_edit' , :method => 'post'  do  |f| %>
+    <%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
+    <div class="input string optional user_pictureref">
+      <img id="img" fieldname="user_pictureref" class="ajaxUpload picture_user" src="<%= @user.pictureref ? "/data/#{@user.pictureref}":'#' %>" onerror="this.src='/data/default_user';"/>
+    </div>
+    <%= f.input :givenname, label: 'Nombres', html:{class:'form_field' , readonly:'readonly'} %>
+    <%= f.input :lastname1, label: 'Apellido Paterno' %>
+    <%= f.input :lastname2, label: 'Apellido Materno' %>
+    <%= f.input :documenttype, disabled: true, label: 'Tipo Documento' %>
+    <%= f.input :documentnumber, label: 'Numero Documento' %>
+    <%= f.input :gender, required: true, label: 'Sexo',  collection: ['Masculino','Femenino'], include_blank: true  %>
+    <%= f.hidden_field :twitter, value: false %>
+    <%= f.hidden_field :id %>
+    <%= f.hidden_field :documenttype %>
+    <%= f.button :submit, value: 'Actualizar' %>
+<% end %>

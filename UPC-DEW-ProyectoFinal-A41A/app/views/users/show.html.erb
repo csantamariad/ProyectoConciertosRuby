@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Imagen:</b>
+  <img src="/data/<%= @user.pictureref %>" width="100">
+</p>
+<p>
+  <b>Nombre:</b>
+  <%= @user.givenname %>
+</p>
+
+<p>
+  <b>Apellido Paterno:</b>
+  <%= @user.lastname1 %>
+</p>
+
+<p>
+  <b>Apellido Paterno:</b>
+  <%= @user.lastname2 %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <b>Correo:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Tipo Usuario:</b>
+  <%= @user.user_type.name %>
+</p>
+
+
+<%= link_to 'Editar', edit_user_path(@user), class: 'link_button' %> |
+<%= link_to 'Regresar', users_path, class: 'link_button' %>

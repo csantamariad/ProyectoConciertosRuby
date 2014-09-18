@@ -1,0 +1,18 @@
+<%= simple_form_for @concert do |f| %>
+<% if f.error_notification %>
+<% @concert.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+<% end %>
+
+<%= f.input :headline, label: 'Nombre' %>
+<%= f.input :description, label: 'Descripción' %>
+<%= f.input :datestart, label: 'Fecha de Inicio' %>
+<%= f.input :dateend, label: 'Fecha de Fin' %>
+<%= f.input :totalscore, label: 'Calificación', :collection => 1..5, :as => :radio %>
+<%= f.input :local_id, label: 'Local', :collection => Local.all %>
+<%= f.input :group_id, label: 'Grupo', :collection => Group.all %>
+<%= f.input :estate, :as => 'hidden',  html:{value:'ACT'} %>
+<%= f.button :submit, label: 'Crear concierto' %>
+
+<% end %>

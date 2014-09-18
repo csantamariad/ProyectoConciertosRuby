@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <label>Grupo:</label> <%= @group.name %>
+</div>
+<div>
+  <img class="picture_local" src="<%= @group.pictureref ? "/data/#{@group.pictureref}":'#'  %>" onerror="this.src='/data/default_group';" />
+</div>
+<div>
+  <label>Género:</label><span><%= @group.genre %></span><br/>
+  <label>Biografía:</label><span><%= @group.biography %></span><br/>
+</div>
+<div>
+  <ul>
+  <% @group.users.each do |cur_user|%>
+    <li>
+      <img class="picture_user small"  src="<%= cur_user.pictureref ? "/data/#{cur_user.pictureref}":'#'  %>" onerror="this.src='/data/default_user';" />
+      <span><%= cur_user.lastname1 %> <%= cur_user.lastname2 %>, <%= cur_user.givenname %></span>
+    </li>
+  <% end %>
+</ul>
+</div>
+<div>
+<%= link_to 'Editar', edit_group_path(@group) , class: 'link_button'%> |
+<%= link_to 'Regresar', groups_path , class: 'link_button'%>
+</div>

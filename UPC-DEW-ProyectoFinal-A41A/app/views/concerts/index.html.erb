@@ -1,0 +1,35 @@
+<h1>Listado de conciertos</h1>
+
+<table class="box-table-a">
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Fecha inicio</th>
+    <th>Fecha final</th>
+    <th>Calificación</th>
+    <th>Local</th>
+    <th>Grupo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @concerts.each do |concert| %>
+  <tr>
+    <td><%= concert.headline %></td>
+    <td><%= concert.description %></td>
+    <td><%= concert.datestart %></td>
+    <td><%= concert.dateend %></td>
+    <td><%= concert.totalscore %></td>
+    <td><%= concert.local.name %></td>
+    <td><%= concert.group.name %></td>
+    <td><%= link_to 'Mostrar', concert , class: 'link_button'%></td>
+    <td><%= link_to 'Editar', edit_concert_path(concert) , class: 'link_button'%></td>
+    <td><%= link_to 'Borrar', concert, method: :delete, data: { confirm: 'Está seguro de borrar?' } , class: 'link_button'%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo concierto', new_concert_path , class: 'link_button'%>

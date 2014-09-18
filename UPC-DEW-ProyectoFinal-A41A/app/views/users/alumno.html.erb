@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= simple_form_for @user, :url => '/alumno_change' , :method => 'post'  do  |f| %>
+    <%= f.input :pictureref,:as => :hidden, :input_html => {:value => UUID.new.generate } %>
+    <div class="input string optional user_pictureref">
+      <img id="img" fieldname="user_pictureref"  src="<%= @user.pictureref ? "/data/#{@user.pictureref}":'#' %>" onerror="this.src='/data/default_user';"/>
+    </div>
+    <%= f.input :givenname, disabled:true, label: 'Nombres', html:{class:'form_field'} %>
+    <%= f.input :lastname1, disabled:true, label: 'Apellido Paterno' %>
+    <%= f.input :lastname2, disabled:true, label: 'Apellido Materno' %>
+    <%= f.input :documenttype, disabled:true, label: 'Tipo Documento', collection: ['TUI'], include_blank: false %>
+    <%= f.input :documentnumber, label: 'Numero Documento' %>
+    <%= f.button :submit , "Actualizar" %>
+<% end %>
